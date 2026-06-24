@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kawachi Group — Growth Framework 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #ffffff;
+    --off: #f7f8fa;
+    --border: #e8eaed;
+    --border-strong: #d1d5db;
+    --text-primary: #0d0f12;
+    --text-secondary: #4b5563;
+    --text-muted: #9ca3af;
+    --accent-blue: #2563eb;
+    --accent-blue-light: #eff6ff;
+    --accent-green: #059669;
+    --accent-green-light: #ecfdf5;
+    --accent-orange: #d97706;
+    --accent-orange-light: #fffbeb;
+    --accent-red: #dc2626;
+    --accent-red-light: #fef2f2;
+    --accent-purple: #7c3aed;
+    --accent-purple-light: #f5f3ff;
+    --accent-teal: #0891b2;
+    --accent-teal-light: #ecfeff;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.04);
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+    color: var(--text-primary);
+  }
+  .header-logo span { color: var(--accent-blue); }
+  .header-nav {
+    display: flex;
+    gap: 8px;
+  }
+  .header-nav a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .header-nav a:hover { background: var(--off); color: var(--text-primary); }
+  .badge-live {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-green);
+    background: var(--accent-green-light);
+    border: 1px solid #a7f3d0;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .badge-live::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 40px 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    background: var(--accent-blue-light);
+    border: 1px solid #bfdbfe;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+  }
+  .hero-title .accent { color: var(--accent-blue); }
+  .hero-subtitle {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 480px;
+    margin-bottom: 36px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 3px; }
+  .stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+  }
+  .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+  .stat-divider { width: 1px; background: var(--border-strong); }
+
+  .hero-visual {
+    background: var(--off);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #dbeafe 0%, transparent 70%);
+  }
+  .mini-system {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  .mini-layer-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+  .mini-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .mini-pill {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 11px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .pill-blue { background: var(--accent-blue-light); color: var(--accent-blue); border: 1px solid #bfdbfe; }
+  .pill-green { background: var(--accent-green-light); color: var(--accent-green); border: 1px solid #a7f3d0; }
+  .pill-orange { background: var(--accent-orange-light); color: var(--accent-orange); border: 1px solid #fde68a; }
+  .pill-purple { background: var(--accent-purple-light); color: var(--accent-purple); border: 1px solid #ddd6fe; }
+  .pill-teal { background: var(--accent-teal-light); color: var(--accent-teal); border: 1px solid #a5f3fc; }
+  .mini-arrow {
+    font-size: 16px;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 2px 0;
+  }
+
+  /* ── SECTION WRAPPERS ── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+  }
+  .section-tag {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── DIVIDER ── */
+  .full-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 40px;
+  }
+  .section-spacer { height: 64px; }
+
+  /* ── LAYER 01: DISTRIBUTION ── */
+  .distribution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .dist-main-card {
+    background: var(--accent-blue-light);
+    border: 1.5px solid #bfdbfe;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .dist-main-card::after {
+    content: 'CORE ENGINE';
+    position: absolute;
+    top: 20px; right: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #93c5fd;
+  }
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .card-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .tag-cluster { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: white;
+    border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+  }
+
+  .dist-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .mini-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .mini-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .mini-card-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .ic-orange { background: var(--accent-orange-light); }
+  .ic-green { background: var(--accent-green-light); }
+  .ic-purple { background: var(--accent-purple-light); }
+  .mini-card-body { flex: 1; }
+  .mini-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .mini-card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+  /* ── LAYER 02: ACCELERATION ── */
+  .accel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .accel-card {
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    border: 1.5px solid;
+    position: relative;
+    overflow: hidden;
+  }
+  .accel-card.organic {
+    background: var(--accent-green-light);
+    border-color: #a7f3d0;
+  }
+  .accel-card.paid {
+    background: var(--accent-orange-light);
+    border-color: #fde68a;
+  }
+  .accel-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .accel-card.organic .accel-badge {
+    background: #d1fae5;
+    color: var(--accent-green);
+    border: 1px solid #6ee7b7;
+  }
+  .accel-card.paid .accel-badge {
+    background: #fef3c7;
+    color: var(--accent-orange);
+    border: 1px solid #fcd34d;
+  }
+  .accel-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .accel-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .checklist { display: flex; flex-direction: column; gap: 10px; }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  .check-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-green { background: var(--accent-green); }
+  .dot-orange { background: var(--accent-orange); }
+
+  /* ── LAYER 03: SALES INFRASTRUCTURE ── */
+  .infra-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .infra-hub {
+    background: var(--text-primary);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 32px 36px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .hub-icon {
+    font-size: 36px;
+    width: 64px; height: 64px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .hub-text h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .hub-text p { font-size: 14px; opacity: 0.7; line-height: 1.5; }
+  .hub-tag {
+    position: absolute;
+    top: 20px; right: 24px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .infra-branches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-left: 20px;
+    position: relative;
+  }
+  .infra-branches::before {
+    content: '';
+    position: absolute;
+    left: 0; top: -24px;
+    width: 1px; height: calc(100% + 24px);
+    background: var(--border-strong);
+  }
+  .branch-card {
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1.5px solid;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .branch-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+  }
+  .bc-whatsapp { background: #f0fdf4; border-color: #86efac; }
+  .bc-amazon { background: #fffbeb; border-color: #fcd34d; }
+  .bc-indiamart { background: #faf5ff; border-color: #c4b5fd; }
+  .branch-icon { font-size: 22px; margin-bottom: 12px; }
+  .branch-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .branch-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+  .branch-label {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .lbl-green { color: var(--accent-green); }
+  .lbl-orange { color: var(--accent-orange); }
+  .lbl-purple { color: var(--accent-purple); }
+
+  /* ── LAYER 04: TRUST LAYER ── */
+  .trust-band {
+    background: var(--accent-purple-light);
+    border: 1.5px solid #ddd6fe;
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    display: flex;
+    gap: 48px;
+    align-items: center;
+  }
+  .trust-left { flex: 1; }
+  .trust-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-purple);
+    margin-bottom: 12px;
+  }
+  .trust-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+  .trust-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .trust-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 260px;
+  }
+  .trust-point {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border: 1px solid #e9d5ff;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  .trust-point-icon { font-size: 18px; }
+
+  /* ── LAYER 05: WHOLE SYSTEM WRAPPER ── */
+  .system-wrapper {
+    background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+    border: 2px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .system-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ddd6fe 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .system-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .system-icon {
+    width: 52px; height: 52px;
+    background: white;
+    border: 1.5px solid #c4b5fd;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .system-head-text h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .system-head-text p { font-size: 14px; color: var(--text-secondary); }
+  .system-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .sys-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    transition: box-shadow 0.2s;
+  }
+  .sys-card:hover { box-shadow: var(--shadow-md); }
+  .sys-card-icon { font-size: 20px; margin-bottom: 10px; }
+  .sys-card-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+  .sys-card-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+  /* ── FLOW DIAGRAM ── */
+  .flow-section {
+    background: var(--off);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 64px 40px;
+  }
+  .flow-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .flow-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+  }
+  .flow-subtitle { font-size: 14px; color: var(--text-secondary); margin-bottom: 40px; }
+  .flow-track {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .flow-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px;
+    flex: 1;
+  }
+  .flow-node-box {
+    background: white;
+    border: 1.5px solid var(--border-strong);
+    border-radius: 12px;
+    padding: 16px 14px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .flow-node-box:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-blue);
+  }
+  .flow-node-num {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .flow-node-emoji { font-size: 22px; margin-bottom: 8px; }
+  .flow-node-name { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+  .flow-node-sub { font-size: 11px; color: var(--text-secondary); margin-top: 3px; line-height: 1.4; }
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--accent-blue);
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: -18px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--text-primary);
+    color: white;
+    padding: 48px 40px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .footer-brand span { opacity: 0.4; }
+  .footer-meta { font-size: 13px; opacity: 0.4; }
+  .footer-cta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 14px 20px;
+  }
+  .footer-cta-text { font-size: 13px; font-weight: 500; }
+  .footer-cta-sub { font-size: 11px; opacity: 0.5; }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+  .fade-in-delay-4 { transition-delay: 0.4s; }
+
+  /* ── CONNECTOR LINES ── */
+  .connector {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+    color: var(--text-muted);
+    font-size: 24px;
+  }
+
+  /* scrollbar */
+  .flow-track::-webkit-scrollbar { height: 4px; }
+  .flow-track::-webkit-scrollbar-track { background: var(--border); border-radius: 2px; }
+  .flow-track::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .distribution-grid, .accel-grid, .infra-branches { grid-template-columns: 1fr; }
+    .trust-band { flex-direction: column; }
+    .system-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
+    .hero-title { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">Kawachi Group <span>× Aumeverse</span></div>
+  <nav class="header-nav">
+    <a href="#distribution">Distribution</a>
+    <a href="#acceleration">Acceleration</a>
+    <a href="#infrastructure">Infrastructure</a>
+    <a href="#trust">Trust</a>
+    <a href="#system">System</a>
+  </nav>
+  <div class="badge-live">Live Strategy 2025</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">📋 Business Growth Framework</div>
+    <h1 class="hero-title">The Complete<br><span class="accent">Kawachi</span><br>Growth System</h1>
+    <p class="hero-subtitle">A full-stack digital architecture — from content distribution and paid acceleration to sales infrastructure and brand trust — built to compound growth across every channel simultaneously.</p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">System Layers</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Sales Channels</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Unified Hub</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="mini-system">
+      <div class="mini-layer-label">Layer 1 — Distribution</div>
+      <div class="mini-row">
+        <span class="mini-pill pill-blue">Influencer Marketing</span>
+        <span class="mini-pill pill-blue">Media Creatives</span>
+      </div>
+      <div class="mini-arrow">↓</div>
+      <div class="mini-layer-label">Layer 2 — Acceleration</div>
+      <div class="mini-row">
+        <span class="mini-pill pill-green">SEO</span>
+        <span class="mini-pill pill-green">Social</span>
+        <span class="mini-pill pill-orange">Meta Ads</span>
+      </div>
+      <div class="mini-arrow">↓</div>
+      <div class="mini-layer-label">Layer 3 — Infrastructure</div>
+      <div class="mini-row">
+        <span class="mini-pill pill-teal">Website Hub</span>
+        <span class="mini-pill pill-green">WhatsApp Bot</span>
+      </div>
+      <div class="mini-arrow">↓</div>
+      <div class="mini-layer-label">Layer 4 — Sales Channels</div>
+      <div class="mini-row">
+        <span class="mini-pill pill-orange">Amazon/Flipkart</span>
+        <span class="mini-pill pill-purple">IndiaMART B2B</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL FLOW DIAGRAM -->
+<div class="flow-section">
+  <div class="flow-inner">
+    <h2 class="flow-title">End-to-End Customer Journey</h2>
+    <p class="flow-subtitle">How awareness converts to revenue — every touchpoint in sequence.</p>
+    <div class="flow-track">
+      <div class="flow-node">
+        <div class="flow-node-box">
+          <div class="flow-node-num">STEP 01</div>
+          <div class="flow-node-emoji">🎬</div>
+          <div class="flow-node-name">Content Drop</div>
+          <div class="flow-node-sub">Influencer + Media Creatives</div>
+        </div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node-box">
+          <div class="flow-node-num">STEP 02</div>
+          <div class="flow-node-emoji">📣</div>
+          <div class="flow-node-name">Paid Boost</div>
+          <div class="flow-node-sub">Meta Ads + Influencer Paid</div>
+        </div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node-box">
+          <div class="flow-node-num">STEP 03</div>
+          <div class="flow-node-emoji">🔍</div>
+          <div class="flow-node-name">Organic Pull</div>
+          <div class="flow-node-sub">SEO + Algorithm + Handles</div>
+        </div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node-box">
+          <div class="flow-node-num">STEP 04</div>
+          <div class="flow-node-emoji">🌐</div>
+          <div class="flow-node-name">Website Hub</div>
+          <div class="flow-node-sub">Central Conversion Point</div>
+        </div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node-box">
+          <div class="flow-node-num">STEP 05</div>
+          <div class="flow-node-emoji">💬</div>
+          <div class="flow-node-name">WhatsApp Bot</div>
+          <div class="flow-node-sub">Auto Lead Qualification</div>
+        </div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node-box">
+          <div class="flow-node-num">STEP 06</div>
+          <div class="flow-node-emoji">🛒</div>
+          <div class="flow-node-name">Purchase</div>
+          <div class="flow-node-sub">Amazon / Website / B2B</div>
+        </div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="flow-node-box">
+          <div class="flow-node-num">STEP 07</div>
+          <div class="flow-node-emoji">🔁</div>
+          <div class="flow-node-name">Retention</div>
+          <div class="flow-node-sub">WhatsApp Follow-up Loop</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-spacer"></div>
+
+<!-- LAYER 01 — DISTRIBUTION SYSTEM -->
+<section class="section" id="distribution">
+  <div class="section-header fade-in">
+    <h2 class="section-title">Layer 01 — Distribution System</h2>
+    <span class="section-tag">Top of Funnel</span>
+  </div>
+  <div class="distribution-grid">
+    <div class="dist-main-card fade-in fade-in-delay-1">
+      <div class="card-icon">📡</div>
+      <div class="card-title">Influencer Marketing Engine</div>
+      <div class="card-desc">The core of the distribution system. A structured influencer program that pushes creatives, builds credibility, and generates reach at scale — combining paid partnerships with organic amplification.</div>
+      <div class="tag-cluster">
+        <span class="tag">Briefs & Guidelines</span>
+        <span class="tag">Paid Collaborations</span>
+        <span class="tag">Inspiration Content</span>
+        <span class="tag">Video Collabs</span>
+        <span class="tag">Credibility & Trust</span>
+        <span class="tag">UGC Media</span>
+      </div>
+    </div>
+    <div class="dist-right">
+      <div class="mini-card fade-in fade-in-delay-2">
+        <div class="mini-card-icon ic-orange">🎨</div>
+        <div class="mini-card-body">
+          <div class="mini-card-title">Creative Production</div>
+          <div class="mini-card-desc">AI-powered video creatives, static ads, and branded media built for every platform format — reels, stories, feeds.</div>
+        </div>
+      </div>
+      <div class="mini-card fade-in fade-in-delay-3">
+        <div class="mini-card-icon ic-green">📹</div>
+        <div class="mini-card-body">
+          <div class="mini-card-title">Video Collaborations</div>
+          <div class="mini-card-desc">Structured video deals with niche creators — product demos, lifestyle integrations, unboxing content.</div>
+        </div>
+      </div>
+      <div class="mini-card fade-in fade-in-delay-4">
+        <div class="mini-card-icon ic-purple">🤝</div>
+        <div class="mini-card-body">
+          <div class="mini-card-title">Credibility & Trust Content</div>
+          <div class="mini-card-desc">Association-backed content, testimonials, and expert endorsements that anchor brand authority.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+<div class="section-spacer"></div>
+
+<!-- LAYER 02 — ACCELERATION -->
+<section class="section" id="acceleration">
+  <div class="section-header fade-in">
+    <h2 class="section-title">Layer 02 — Acceleration System</h2>
+    <span class="section-tag">Mid Funnel</span>
+  </div>
+  <div class="accel-grid">
+    <div class="accel-card organic fade-in fade-in-delay-1">
+      <div class="accel-badge">🌿 Organic Track</div>
+      <div class="accel-title">Long-term Compounding</div>
+      <div class="accel-desc">Organic channels that build permanent discoverability. Every post, every article, every listing compounds over time — a brand asset that grows without additional spend.</div>
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-dot dot-green"></div>
+          SEO — Search engine ranking for product + wellness keywords
+        </div>
+        <div class="check-item">
+          <div class="check-dot dot-green"></div>
+          Social Handles — Consistent presence on Instagram, YouTube, Meta
+        </div>
+        <div class="check-item">
+          <div class="check-dot dot-green"></div>
+          Social Media Algorithm — Content cadence optimized for reach triggers
+        </div>
+      </div>
+    </div>
+    <div class="accel-card paid fade-in fade-in-delay-2">
+      <div class="accel-badge">⚡ Paid Track</div>
+      <div class="accel-title">Immediate Velocity</div>
+      <div class="accel-desc">Performance marketing that generates qualified traffic and conversions on demand — engineered for ROAS, not just impressions. Precise targeting for the right buyer segments.</div>
+      <div class="checklist">
+        <div class="check-item">
+          <div class="check-dot dot-orange"></div>
+          Meta Ads — Catalogue campaigns, retargeting, lead gen funnels
+        </div>
+        <div class="check-item">
+          <div class="check-dot dot-orange"></div>
+          Influencer Marketing (Paid) — Sponsored posts with tracked UTMs
+        </div>
+        <div class="check-item">
+          <div class="check-dot dot-orange"></div>
+          Performance Creatives — A/B tested video and static ad variants
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+<div class="section-spacer"></div>
+
+<!-- LAYER 03 — SALES INFRASTRUCTURE -->
+<section class="section" id="infrastructure">
+  <div class="section-header fade-in">
+    <h2 class="section-title">Layer 03 — Sales Infrastructure</h2>
+    <span class="section-tag">Conversion Layer</span>
+  </div>
+  <div class="infra-flow fade-in">
+    <div class="infra-hub">
+      <div class="hub-icon">🌐</div>
+      <div class="hub-text">
+        <h3>Website — Central Sales Hub</h3>
+        <p>All traffic from every channel — paid, organic, influencer, B2B — lands here first. The website acts as the unified conversion engine that qualifies and routes each visitor to the right sales path.</p>
+      </div>
+      <div class="hub-tag">SALES PRIORITY NODE</div>
+    </div>
+    <div class="infra-branches">
+      <div class="branch-card bc-whatsapp fade-in fade-in-delay-1">
+        <div class="branch-icon">💬</div>
+        <div class="branch-title">WhatsApp Bot</div>
+        <div class="branch-desc">Automated lead qualification, order assistance, and customer follow-up via WhatsApp. Backed by a live backend team for complex queries. Operates as a 24/7 sales assistant.</div>
+        <div class="branch-label lbl-green">↳ D2C Lead Channel</div>
+      </div>
+      <div class="branch-card bc-amazon fade-in fade-in-delay-2">
+        <div class="branch-icon">🛒</div>
+        <div class="branch-title">Amazon / Flipkart</div>
+        <div class="branch-desc">Direct marketplace listings for high-intent buyers. Ads, A+ content, and review strategy managed to maximize organic ranking and conversion rate on platform.</div>
+        <div class="branch-label lbl-orange">↳ Marketplace Channel</div>
+      </div>
+      <div class="branch-card bc-indiamart fade-in fade-in-delay-3">
+        <div class="branch-icon">🏭</div>
+        <div class="branch-title">IndiaMART B2B</div>
+        <div class="branch-desc">B2B lead generation via IndiaMART — targeting wholesalers, retailers, and institutional buyers. Leads routed directly to the backend team for relationship-based closure.</div>
+        <div class="branch-label lbl-purple">↳ B2B Trade Channel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+<div class="section-spacer"></div>
+
+<!-- LAYER 04 — TRUST & ASSOCIATION -->
+<section class="section" id="trust">
+  <div class="section-header fade-in">
+    <h2 class="section-title">Layer 04 — Trust & Association</h2>
+    <span class="section-tag">Brand Foundation</span>
+  </div>
+  <div class="trust-band fade-in">
+    <div class="trust-left">
+      <div class="trust-label">🔒 Credibility Architecture</div>
+      <div class="trust-title">Association = Unfair<br>Competitive Advantage</div>
+      <div class="trust-desc">Strategic partnerships with associations, certification bodies, and credible institutions that grant Kawachi Group third-party legitimacy. In a crowded market, association-backed trust is the signal that converts fence-sitters into buyers — and buyers into loyal customers.</div>
+    </div>
+    <div class="trust-right">
+      <div class="trust-point">
+        <div class="trust-point-icon">🏛️</div>
+        Industry & Trade Associations
+      </div>
+      <div class="trust-point">
+        <div class="trust-point-icon">⭐</div>
+        Expert Endorsements & Reviews
+      </div>
+      <div class="trust-point">
+        <div class="trust-point-icon">📜</div>
+        Certifications & Quality Marks
+      </div>
+      <div class="trust-point">
+        <div class="trust-point-icon">🤝</div>
+        Strategic Brand Partnerships
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+<div class="section-spacer"></div>
+
+<!-- LAYER 05 — WHOLE SYSTEM: WHATSAPP OFFICE -->
+<section class="section" id="system">
+  <div class="section-header fade-in">
+    <h2 class="section-title">Whole System Assistance</h2>
+    <span class="section-tag">Operational Backbone</span>
+  </div>
+  <div class="system-wrapper fade-in">
+    <div class="system-header">
+      <div class="system-icon">📲</div>
+      <div class="system-head-text">
+        <h3>WhatsApp Office — The System Nervous System</h3>
+        <p>A unified WhatsApp-powered command layer that wraps every part of the business — connecting team operations, client communications, lead flows, and backend fulfillment in one always-on channel.</p>
+      </div>
+    </div>
+    <div class="system-grid">
+      <div class="sys-card">
+        <div class="sys-card-icon">🤖</div>
+        <div class="sys-card-title">Automated Lead Bot</div>
+        <div class="sys-card-desc">Instant response to inbound leads from Meta Ads, IndiaMART, and website. Qualifies, tags, and routes without human input.</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-card-icon">👥</div>
+        <div class="sys-card-title">Backend Team Relay</div>
+        <div class="sys-card-desc">Complex queries escalated seamlessly from bot to human team — zero lead drop-off, full handover context retained.</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-card-icon">📊</div>
+        <div class="sys-card-title">Campaign Reporting</div>
+        <div class="sys-card-desc">Weekly ad performance, lead counts, and conversion metrics delivered directly via WhatsApp — always accessible, no dashboard login needed.</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-card-icon">🔔</div>
+        <div class="sys-card-title">Order & Follow-up Flows</div>
+        <div class="sys-card-desc">Post-purchase follow-ups, review requests, and retention sequences triggered automatically — building repeat customer relationships at zero marginal cost.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-spacer"></div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Kawachi Group <span>Growth Framework</span></div>
+      <div class="footer-meta" style="margin-top:6px;">Engineered by Aumeverse · aumeverse.in · 2025</div>
+    </div>
+    <div class="footer-cta">
+      <div>
+        <div class="footer-cta-text">📲 WhatsApp Office Active</div>
+        <div class="footer-cta-sub">Whole system assistance available</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Smooth active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.header-nav a');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.style.background = '');
+        const active = document.querySelector(`.header-nav a[href="#${entry.target.id}"]`);
+        if (active) {
+          active.style.background = '#eff6ff';
+          active.style.color = '#2563eb';
+        }
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => navObserver.observe(s));
+
+  // Counter animation on hero stats
+  function animateCount(el, target, duration = 1200) {
+    let start = 0;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { el.textContent = target; clearInterval(timer); }
+      else el.textContent = Math.floor(start);
+    }, 16);
+  }
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.stat-num').forEach(el => {
+          animateCount(el, parseInt(el.textContent), 800);
+        });
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) statsObserver.observe(heroStats);
+</script>
+</body>
+</html>
