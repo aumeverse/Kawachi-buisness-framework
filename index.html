@@ -794,6 +794,192 @@ body {
 .sysc-p { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
 
 /* ══════════════════════════════════
+   LAYER 06 — REMARKETING
+══════════════════════════════════ */
+.rmkt-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1a1f35 60%, #0f1f2e 100%);
+  border-radius: var(--r-xl);
+  padding: 48px 44px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+.rmkt-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 65%);
+}
+.rmkt-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 20%;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(109,40,217,0.18) 0%, transparent 65%);
+}
+.rmkt-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: flex-start;
+  position: relative; z-index:1;
+  margin-bottom: 36px;
+}
+.rmkt-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #93c5fd;
+  margin-bottom: 12px;
+}
+.rmkt-h {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.rmkt-h .hl2 { color: #60a5fa; }
+.rmkt-p { font-size: 14.5px; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 520px; }
+.rmkt-stat-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 200px;
+}
+.rstat {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r);
+  padding: 14px 18px;
+  text-align: center;
+}
+.rstat-n {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.rstat-l { font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 500; }
+.rmkt-phases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  position: relative; z-index:1;
+}
+.rphase {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--r-lg);
+  padding: 22px 20px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.rphase:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.18);
+}
+.rphase-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(147,197,253,0.7);
+  margin-bottom: 8px;
+}
+.rphase-ico { font-size: 22px; margin-bottom: 12px; }
+.rphase-h {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 7px;
+  letter-spacing: -0.1px;
+}
+.rphase-p { font-size: 12.5px; color: rgba(255,255,255,0.48); line-height: 1.6; }
+
+.rmkt-channels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.rmkt-ch {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  box-shadow: var(--shadow-xs);
+}
+.rmkt-ch:hover { box-shadow: var(--shadow-md); border-color: var(--border-strong); transform: translateY(-2px); }
+.rmkt-ch-ico {
+  width: 48px; height: 48px;
+  border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.ri1 { background: #ecfdf5; border: 1px solid #a7f3d0; }
+.ri2 { background: #eff6ff; border: 1px solid #bfdbfe; }
+.ri3 { background: #fffbeb; border: 1px solid #fde68a; }
+.ri4 { background: #f5f3ff; border: 1px solid #ddd6fe; }
+.rmkt-ch-body { flex: 1; }
+.rmkt-ch-h { font-size: 14.5px; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; letter-spacing: -0.1px; }
+.rmkt-ch-p { font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; }
+.rmkt-ch-tag {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+.rt-g { color: var(--green); background: #ecfdf5; border: 1px solid #a7f3d0; }
+.rt-b { color: var(--blue); background: #eff6ff; border: 1px solid #bfdbfe; }
+.rt-o { color: var(--orange); background: #fffbeb; border: 1px solid #fde68a; }
+.rt-p { color: var(--purple); background: #f5f3ff; border: 1px solid #ddd6fe; }
+
+.rmkt-bottom-strip {
+  background: var(--off);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.rbs-icon { font-size: 26px; flex-shrink: 0; }
+.rbs-text { flex: 1; }
+.rbs-h { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.rbs-p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+.rbs-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue-mid);
+  background: var(--blue-light);
+  border: 1px solid #bfdbfe;
+  padding: 7px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════
    FOOTER
 ══════════════════════════════════ */
 .footer {
@@ -880,6 +1066,7 @@ body {
     <a href="#infra">Infrastructure</a>
     <a href="#orch">Orchestration</a>
     <a href="#sys">System</a>
+    <a href="#rmkt">Remarketing</a>
   </nav>
   <div class="header-right">
     <div class="badge-live">Strategy Active · 2025</div>
@@ -894,7 +1081,7 @@ body {
     <p class="hero-sub">A full-stack digital architecture — from content distribution and paid acceleration to sales infrastructure and brand orchestration — built to compound growth across every channel simultaneously.</p>
     <div class="hero-stats">
       <div class="stat-block">
-        <div class="stat-n" data-target="5">5</div>
+        <div class="stat-n" data-target="6">6</div>
         <div class="stat-l">System Layers</div>
       </div>
       <div class="stat-sep"></div>
@@ -944,6 +1131,12 @@ body {
     <div class="hc-row">
       <span class="hc-pill p-purple">Associations</span>
       <span class="hc-pill p-blue">Certifications</span>
+    </div>
+    <div class="hc-arrow">↓</div>
+    <div class="hc-label">Layer 6 — Remarketing</div>
+    <div class="hc-row">
+      <span class="hc-pill p-orange">WhatsApp Broadcasts</span>
+      <span class="hc-pill p-blue">Meta Retargeting</span>
     </div>
   </div>
 </div>
@@ -1244,6 +1437,107 @@ body {
         <div class="sysc-p">Post-purchase follow-ups, review requests, and retention sequences triggered automatically — zero marginal cost.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="divider"></div><div class="spacer"></div>
+
+<!-- ══ LAYER 06 — REMARKETING ══ -->
+<section class="sec" id="rmkt">
+  <div class="sec-hd fi">
+    <div class="sec-left">
+      <div class="sec-num">Layer 06</div>
+      <div class="sec-title">Remarketing System</div>
+    </div>
+    <div class="sec-tag">Revenue Recovery</div>
+  </div>
+
+  <div class="rmkt-hero fi">
+    <div class="rmkt-top">
+      <div>
+        <div class="rmkt-kicker">♻️ Lead Re-Engagement Engine</div>
+        <div class="rmkt-h">Every lead collected<br>is <span class="hl2">untapped revenue</span> waiting.</div>
+        <div class="rmkt-p">All data accumulated till today — website visitors, WhatsApp inquiries, Meta ad leads, IndiaMART contacts — gets strategically re-engaged through timed, personalised follow-up sequences that pull cold leads back into the active sales system. Nothing is wasted. Every touchpoint is a second chance.</div>
+      </div>
+      <div class="rmkt-stat-cluster">
+        <div class="rstat">
+          <div class="rstat-n">3×</div>
+          <div class="rstat-l">Avg. follow-ups needed to convert</div>
+        </div>
+        <div class="rstat">
+          <div class="rstat-n">80%</div>
+          <div class="rstat-l">Leads never followed up on</div>
+        </div>
+        <div class="rstat">
+          <div class="rstat-n">0₹</div>
+          <div class="rstat-l">Extra ad spend to re-activate</div>
+        </div>
+      </div>
+    </div>
+    <div class="rmkt-phases">
+      <div class="rphase">
+        <div class="rphase-num">Phase 01</div>
+        <div class="rphase-ico">🗂️</div>
+        <div class="rphase-h">Data Audit & Segmentation</div>
+        <div class="rphase-p">All existing lead data — WhatsApp numbers, Meta leads, IndiaMART contacts, website sign-ups — is cleaned, deduplicated, and segmented by source, intent level, and recency.</div>
+      </div>
+      <div class="rphase">
+        <div class="rphase-num">Phase 02</div>
+        <div class="rphase-ico">🗓️</div>
+        <div class="rphase-h">Sequenced Follow-Up Design</div>
+        <div class="rphase-p">Each segment gets a tailored follow-up sequence — right message, right channel, right timing — designed to rekindle interest without feeling intrusive or spammy.</div>
+      </div>
+      <div class="rphase">
+        <div class="rphase-num">Phase 03</div>
+        <div class="rphase-ico">🔁</div>
+        <div class="rphase-h">Re-entry Into Sales System</div>
+        <div class="rphase-p">Re-engaged leads are routed back into the active sales flow — directed to the website, WhatsApp bot, or backend team depending on their intent signal and purchase readiness.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rmkt-channels-grid fi d1">
+    <div class="rmkt-ch">
+      <div class="rmkt-ch-ico ri1">💬</div>
+      <div class="rmkt-ch-body">
+        <div class="rmkt-ch-h">WhatsApp Broadcast Sequences</div>
+        <div class="rmkt-ch-p">Timed WhatsApp message flows sent to segmented lead lists — product reminders, new arrivals, limited offers, and value content that keeps Kawachi top-of-mind until the lead is ready to buy.</div>
+        <div class="rmkt-ch-tag rt-g">High Open Rate Channel</div>
+      </div>
+    </div>
+    <div class="rmkt-ch">
+      <div class="rmkt-ch-ico ri2">🎯</div>
+      <div class="rmkt-ch-body">
+        <div class="rmkt-ch-h">Meta Retargeting Audiences</div>
+        <div class="rmkt-ch-p">Website visitors, video viewers, and past engagers are loaded into custom Meta audiences and served targeted ads — pulling them back with fresh creative and time-sensitive offers.</div>
+        <div class="rmkt-ch-tag rt-b">Pixel-Powered Re-reach</div>
+      </div>
+    </div>
+    <div class="rmkt-ch">
+      <div class="rmkt-ch-ico ri3">📋</div>
+      <div class="rmkt-ch-body">
+        <div class="rmkt-ch-h">IndiaMART & B2B Follow-Up</div>
+        <div class="rmkt-ch-p">All past IndiaMART inquiries receive structured follow-up calls and messages from the backend team with updated catalogues and pricing — converting stalled B2B conversations into active orders.</div>
+        <div class="rmkt-ch-tag rt-o">B2B Reactivation</div>
+      </div>
+    </div>
+    <div class="rmkt-ch">
+      <div class="rmkt-ch-ico ri4">🔔</div>
+      <div class="rmkt-ch-body">
+        <div class="rmkt-ch-h">Post-Purchase Upsell Flows</div>
+        <div class="rmkt-ch-p">Existing customers are the warmest leads. Automated WhatsApp flows trigger at the right moment — cross-selling complementary products, requesting reviews, and driving repeat purchases with loyalty incentives.</div>
+        <div class="rmkt-ch-tag rt-p">Retention + LTV Growth</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rmkt-bottom-strip fi d2">
+    <div class="rbs-icon">🌐</div>
+    <div class="rbs-text">
+      <div class="rbs-h">All Re-Engaged Leads Route Back to the Kawachi Website</div>
+      <div class="rbs-p">Every remarketing sequence — WhatsApp broadcasts, Meta retargeting, B2B follow-ups — funnels re-engaged leads back to the central Kawachi WooCommerce website for a trackable, measurable conversion. One system. One destination. Full data ownership.</div>
+    </div>
+    <div class="rbs-badge">→ kawachi website</div>
   </div>
 </section>
 
